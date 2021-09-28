@@ -1,0 +1,437 @@
+.page-home {
+    &__form {
+      * {
+        box-sizing: border-box;
+      }
+    }
+    &__form input[type="text"] {
+      padding: 10px;
+      font-size: 17px;
+      border: 1px solid grey;
+      float: left;
+      width: 100%;
+      background: #f1f1f1;
+      margin-bottom: 30px;
+    }
+  
+    &__form::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+  
+    &__button {
+      position: relative;
+  
+      width: 100%;
+      padding: 10px;
+      margin: 32px 0 32px 0;
+  
+      text-transform: uppercase;
+      font-weight: bold;
+      color: white;
+      background-color: $ONE_YELLOW;
+      border: solid 1px $LIGHT_GRAY;
+      border-radius: 10px;
+    }
+  
+    &__button:active {
+      background-color: $THREE_YELLOW;
+    }
+  
+    @media #{$BREAKPOINT-DESK} {
+      &__button:hover {
+        background-color: $THREE_YELLOW;
+      }
+    }
+  
+  }
+  
+  .loading-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    animation: loading-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #fff transparent transparent transparent;
+    right: 15%;
+    top: 15%;
+  
+    @media #{$BREAKPOINT-TABLET-LAND} {
+        right: 35%;
+    }
+  }
+  .loading-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+  }
+  .loading-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+  }
+  .loading-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+  }
+  @keyframes loading-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+  }
+  
+  .no-poke {
+    background-color: $ONE_LIGHT_GRAY;
+    color: $DARK_GRAY;
+  }
+
+  .btn {
+    margin-right: 12px;
+  }
+
+  .poke-details {
+    color: $ONE_LIGHT_GRAY;
+    
+      &__header {
+        width: 100%;
+        height: 50px;
+        border-radius: 10px;
+        padding: 10px;
+        margin-bottom: 20px;
+    
+        display: flex;
+        align-items: center;
+        justify-content: left;
+    
+        hgroup {
+          margin-right: 24px;
+    
+          h1 {
+            text-transform: uppercase;
+            font-size: 16px;
+            text-align: center;
+            color: #ffffff;
+    
+            @media #{$BREAKPOINT-TABLET} {
+              font-size: 25px;
+            }
+          }
+        }
+    
+        &__button {
+          display: flex;
+          justify-content: center;
+          margin: 20px 0 0;
+        }
+      }
+    
+      &__card {
+        &__infos {
+          width: 100%;
+          position: relative;
+    
+          display: flex;
+          justify-content: left;
+          flex-direction: column;
+    
+          @media #{$BREAKPOINT-TABLET} {
+            flex-direction: row;
+          }
+    
+          &__personal {
+            width: 100%;
+            position: relative;
+    
+            @media #{$BREAKPOINT-TABLET} {
+              width: 50%;
+              margin-left: 24px;
+            }
+    
+            &__data {
+              display: flex;
+    
+              &__height {
+                width: 50%;
+              }
+    
+              &__weight {
+                margin-left: 24px;
+                width: 50%;
+              }
+            }
+    
+            &__features {
+              margin: 24px 0 24px 0;
+    
+              &__resistant {
+                margin-bottom: 16px;
+    
+                h2 {
+                  margin-bottom: 8px;
+                }
+              }
+    
+              &__weaknesses {
+                h2 {
+                  margin-bottom: 8px;
+                }
+              }
+            }
+          }
+    
+          &__img-container {    
+            display: flex;
+            justify-content: center;
+            align-items: center;
+    
+            @media #{$BREAKPOINT-TABLET} {
+              width: 50%;
+              margin-bottom: 0;
+            }
+    
+            &__img {
+              width: 100%;
+              height: 100%;
+              background-size: contain;
+              background-repeat: no-repeat;
+              background-position: center;
+            }
+          }
+    
+        }
+        
+        &__sub-header {
+          width: 100%;
+          height: 35px;
+          
+          padding: 10px;
+          margin: 24px 0 24px 0;
+          border-radius: 10px;
+          
+          color: #ffffff;
+          text-transform: uppercase;
+          font-size: 12px;
+          
+          display: flex;
+          align-items: center;
+        }
+    
+        &__attacks {
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          
+          &-item {
+            background: #9e9e9e;
+            border: solid 1px #9e9e9e;
+            padding: 5px;
+            border-radius: 5px;
+            width: 50%;
+            margin: 3px;
+          }
+          
+          &__fast {
+            width: 40%;
+          }
+    
+          &__special {
+            width: 40%;
+            margin-left: 24px;
+          }
+        }
+    
+        &__evolution {
+          display: grid;
+          grid-gap: 16px;
+    
+          @media #{$BREAKPOINT-TABLET}{
+            grid-template-columns: 1fr 1fr 1fr;
+          }
+        }
+      }
+    }
+    
+    
+    .feature-list {
+      display: flex;
+      justify-content: left;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    
+    .mobi {
+      visibility: visible;
+    
+      @media #{$BREAKPOINT-TABLET} {
+        visibility: hidden;
+      }
+    }
+    
+    .desk {
+    
+      @media #{$BREAKPOINT-TABLET} {
+        visibility: visible;
+      }
+    }
+
+    .btn {
+      display: flex;
+      justify-content: center;
+      margin: 12px 0;
+    }
+    
+    .btn button {
+      border-style: none;
+      margin-right: 10px;
+      border-radius: 100px;
+      height: 50px;
+      width: 50px;
+      background: #30a7d7;
+      color: #fff;
+      font-size: 1em;
+      cursor: pointer;
+    }
+
+    .modal {
+  width: 500px;
+  background: white;
+  border: 1px solid #ccc;
+  transition: 1.1s ease-out;
+  box-shadow: -2rem 2rem 2rem rgba(black, 0.2);
+  filter: blur(0);
+  transform: scale(1);
+  opacity: 1;
+  visibility: visible;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  &.red {
+    background: black;
+    color: red;
+  }
+  &.blue {
+    background: blue;
+    color: red;
+  }
+
+  &.off {
+    opacity: 0;
+    visibility: hidden;
+    filter: blur(8px);
+    transform: scale(0.33);
+    box-shadow: 1rem 0 0 rgba(black, 0.2);
+  }
+  @supports (offset-rotate: 0deg) {
+    // OLD
+    // offset-rotation: 0deg;
+    // NEW
+    offset-rotate: 0deg;
+    offset-path: path("M 250,100 S -300,500 -700,-200");
+    &.off {
+      offset-distance: 100%;
+    }
+  }
+  @media (prefers-reduced-motion) {
+    offset-path: none;
+  }
+  h2 {
+    border-bottom: 1px solid #ccc;
+    padding: 1rem;
+    margin: 0;
+  }
+  .content {
+    padding: 1rem;
+  }
+  .actions {
+    border-top: 1px solid #ccc;
+    background: #eee;
+    padding: 0.5rem 1rem;
+    button {
+      border: 0;
+      background: #78f89f;
+      border-radius: 5px;
+      padding: 0.5rem 1rem;
+      font-size: 0.8rem;
+      line-height: 1;
+    }
+  }
+  .input-content {
+    margin-left: 12px;
+  }
+}
+
+#centered-toggle-button {
+  position: absolute;
+  cursor: pointer;
+}
+
+.poke-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    justify-content: center;
+  
+    @media #{$BREAKPOINT-DESK} {
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+  
+    &-item {
+      width: 100%;
+      overflow: hidden;
+      display: flex;
+      position: relative;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  
+      border: solid 1px;
+      border-radius: 10px;
+  
+      &-img-container {
+        height: 80%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        &-img {
+          width: auto;
+          height: 80%;
+          position: relative;
+        }
+      }
+  
+      &-button {
+        height: 25px;
+        width: 100%;
+        position: relative;
+        color: #ffffff;
+        text-decoration: none;
+        cursor: pointer;
+  
+        &-info {
+          height: 100%;
+          width: 100%;
+  
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+  
+          &-name {
+            width: 70%;
+            text-align: center;
+            text-transform: capitalize;
+            font-size: 14px;
+            color: #ffffff;
+          }
+        }
+      }  
+      &-button:hover {
+        filter: brightness(80%);
+      }
+    }
+  }
+  
